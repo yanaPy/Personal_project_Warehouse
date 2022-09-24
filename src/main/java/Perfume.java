@@ -34,33 +34,44 @@ public class Perfume extends Product implements ReadWriteWarehouse {
 
     @Override
     public void addProduct() {
-        System.out.println("Enter name of perfume: ");
         Scanner input = new Scanner(System.in);
-        String name = input.nextLine();
-
-        System.out.println("Enter vendor code of perfume: ");
-        String vendorСode = input.nextLine();
-
         System.out.println("Enter price of perfume: ");
         double price = input.nextDouble();
 
-        Perfume perfume = new Perfume(name, vendorСode, price);
-        if (price <= 1000) {
+
+        if (price <= 1000 && perfumesMass.size() <= PerfumeType.MASSMARKET.getAmount()) {
+            System.out.println("Enter name of perfume: ");
+            String name = input.nextLine();
+
+            System.out.println("Enter vendor code of perfume: ");
+            String vendorСode = input.nextLine();
+
+            Perfume perfume = new Perfume(name, vendorСode, price);
             perfumesMass.add(perfume);
-        } else perfumesLux.add(perfume);
-        System.out.println("Successful");
+            System.out.println("Successful");
+        } else if (price > 1000 && perfumesLux.size() <= PerfumeType.LUX.getAmount()) {
+            System.out.println("Enter name of perfume: ");
+            String name = input.nextLine();
+
+            System.out.println("Enter vendor code of perfume: ");
+            String vendorСode = input.nextLine();
+            Perfume perfume = new Perfume(name, vendorСode, price);
+            perfumesLux.add(perfume);
+
+        } else System.out.println("There is no space in the perfume warehouse");
+
     }
 
     @Override
     public void deleteProduct() {
-        if (perfumesMass.isEmpty()&&perfumesLux.isEmpty()) {
+        if (perfumesMass.isEmpty() && perfumesLux.isEmpty()) {
             System.out.println("No perfume on warehouse.");
         } else {
             System.out.println("Enter price of perfume: ");
             Scanner input = new Scanner(System.in);
             double price = input.nextDouble();
 
-            if (price <= 1000&&!perfumesMass.isEmpty()) {
+            if (price <= 1000 && !perfumesMass.isEmpty()) {
                 System.out.println("Enter vendor code of perfume: ");
                 Scanner inputNext = new Scanner(System.in);
                 String vendorСodeInput = inputNext.nextLine();
@@ -74,7 +85,7 @@ public class Perfume extends Product implements ReadWriteWarehouse {
                     }
                 }
 
-            } else if (price > 1000&&!perfumesLux.isEmpty()){
+            } else if (price > 1000 && !perfumesLux.isEmpty()) {
                 System.out.println("Enter vendor code of perfume: ");
                 Scanner inputNext = new Scanner(System.in);
                 String vendorСodeInput = inputNext.nextLine();

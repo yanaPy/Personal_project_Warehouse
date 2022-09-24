@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Сosmetics extends Product implements ReadWriteWarehouse {
 
-    private static ArrayList<Сosmetics> сosmetics = new ArrayList<>();
+    private static ArrayList<Сosmetics> сosmetics = new ArrayList<>(CosmeticsType.LUX.getAmount());
 
     public static ArrayList<Сosmetics> getСosmetics() {
         return сosmetics;
@@ -24,18 +24,20 @@ public class Сosmetics extends Product implements ReadWriteWarehouse {
 
     @Override
     public void addProduct() {
-        System.out.println("Enter name of cosmetics: ");
-        Scanner input = new Scanner(System.in);
-        String name = input.nextLine();
+        if (сosmetics.size() <= CosmeticsType.LUX.getAmount()) {
+            System.out.println("Enter name of cosmetics: ");
+            Scanner input = new Scanner(System.in);
+            String name = input.nextLine();
 
-        System.out.println("Enter vendor code of cosmetics: ");
-        String vendorСode = input.nextLine();
+            System.out.println("Enter vendor code of cosmetics: ");
+            String vendorСode = input.nextLine();
 
-        System.out.println("Enter price of cosmetics: ");
-        double price = input.nextDouble();
+            System.out.println("Enter price of cosmetics: ");
+            double price = input.nextDouble();
 
-        Сosmetics cosmetic = new Сosmetics(name, vendorСode, price);
-        сosmetics.add(cosmetic);
+            Сosmetics cosmetic = new Сosmetics(name, vendorСode, price);
+            сosmetics.add(cosmetic);
+        } else System.out.println("There is no space in the сosmetics warehouse");
     }
 
     @Override
