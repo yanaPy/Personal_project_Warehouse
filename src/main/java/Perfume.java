@@ -3,9 +3,25 @@ import java.util.Scanner;
 
 public class Perfume extends Product implements ReadWriteWarehouse {
 
-    ArrayList<Perfume> perfumesMass = new ArrayList<>(PerfumeType.MASSMARKET.getAmount());
-    ArrayList<Perfume> perfumesLux = new ArrayList<>(PerfumeType.LUX.getAmount());
+    private static ArrayList<Perfume> perfumesMass = new ArrayList<>(PerfumeType.MASSMARKET.getAmount());
+    private static ArrayList<Perfume> perfumesLux = new ArrayList<>(PerfumeType.LUX.getAmount());
 
+
+    public static ArrayList<Perfume> getPerfumesMass() {
+        return perfumesMass;
+    }
+
+    public static void setPerfumesMass(ArrayList<Perfume> perfumesMass) {
+        Perfume.perfumesMass = perfumesMass;
+    }
+
+    public static ArrayList<Perfume> getPerfumesLux() {
+        return perfumesLux;
+    }
+
+    public static void setPerfumesLux(ArrayList<Perfume> perfumesLux) {
+        Perfume.perfumesLux = perfumesLux;
+    }
 
     public Perfume(String name, String vendorСode, double price) {
         super(name, vendorСode, price);

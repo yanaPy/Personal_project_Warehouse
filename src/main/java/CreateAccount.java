@@ -15,7 +15,7 @@ public class CreateAccount {
 
         User user = new User(name, surname, patronymic);
         Account account = new Account(user);
-        Account.accounts.add(account);
+        Account.getAccounts().add(account);
         System.out.println("Your account number:" + account.getNumberAcc());
     }
 

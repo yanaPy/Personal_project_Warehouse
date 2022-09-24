@@ -3,7 +3,15 @@ import java.util.Scanner;
 
 public class Сosmetics extends Product implements ReadWriteWarehouse {
 
-    ArrayList<Сosmetics> сosmetics = new ArrayList<>();
+    private static ArrayList<Сosmetics> сosmetics = new ArrayList<>();
+
+    public static ArrayList<Сosmetics> getСosmetics() {
+        return сosmetics;
+    }
+
+    public static void setСosmetics(ArrayList<Сosmetics> сosmetics) {
+        Сosmetics.сosmetics = сosmetics;
+    }
 
     public Сosmetics(String name, String vendorСode, double price) {
         super(name, vendorСode, price);

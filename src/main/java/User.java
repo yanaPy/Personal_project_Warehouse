@@ -4,6 +4,18 @@ public class User {
     private final String surname;
     private final String patronymic;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
     public User(String name, String surname, String patronymic) {
         this.name = name;
         this.surname = surname;
