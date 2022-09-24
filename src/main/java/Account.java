@@ -49,7 +49,7 @@ public class Account {
 
     public Account(User user) {
         this.user = user;
-        this.numberAcc=numberAcc;
+        this.numberAcc = numberAcc;
     }
 
 
@@ -67,16 +67,14 @@ public class Account {
         Scanner input = new Scanner(System.in);
         String accInput = input.nextLine();
 
-
-        for (Account acc : accounts) {
-            if (acc.toString().contains(accInput)) {
-                System.out.println("Valid. Access allowed." );
-                accessAllowed=true;
-            } else {
-                System.out.println("Invalid accounts data. Access denied");
-                accessAllowed=false;
-            }
+        if (accounts.toString().contains(accInput)) {
+            System.out.println("Valid. Access allowed.");
+            accessAllowed = true;
+        } else {
+            System.out.println("Invalid accounts data. Access denied");
+            accessAllowed = false;
         }
+
     }
 
     @Override

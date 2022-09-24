@@ -48,47 +48,52 @@ public class Perfume extends Product implements ReadWriteWarehouse {
         if (price <= 1000) {
             perfumesMass.add(perfume);
         } else perfumesLux.add(perfume);
-        System.out.println("Successful" );
+        System.out.println("Successful");
     }
 
     @Override
     public void deleteProduct() {
-        System.out.println("Enter price of perfume: ");
-        Scanner input = new Scanner(System.in);
-        double price = input.nextDouble();
+        if (perfumesMass.isEmpty()&&perfumesLux.isEmpty()) {
+            System.out.println("No perfume on warehouse.");
+        } else {
+            System.out.println("Enter price of perfume: ");
+            Scanner input = new Scanner(System.in);
+            double price = input.nextDouble();
 
-        System.out.println("Enter vendor code of perfume: ");
-        Scanner inputNext = new Scanner(System.in);
-        String vendorСodeInput = inputNext.nextLine();
+            if (price <= 1000&&!perfumesMass.isEmpty()) {
+                System.out.println("Enter vendor code of perfume: ");
+                Scanner inputNext = new Scanner(System.in);
+                String vendorСodeInput = inputNext.nextLine();
 
-
-
-        if (price < 1000) {
-            for (int i = 0; i < perfumesMass.size(); i++) {
-                if (perfumesMass.get(i).toString().contains(vendorСodeInput)){
-                    perfumesMass.remove(i);
-                }  else {
-                    System.out.println("No cosmetics found");
+                for (int i = 0; i < perfumesMass.size(); i++) {
+                    if (perfumesMass.get(i).toString().contains(vendorСodeInput)) {
+                        perfumesMass.remove(i);
+                        System.out.println("Delete successful");
+                    } else if (!perfumesMass.get(i).toString().contains(vendorСodeInput)) {
+                        System.out.println("No perfumes found for delete");
+                    }
                 }
-            }
 
-            } else {
-            for (int i = 0; i < perfumesLux.size(); i++) {
-                if (perfumesLux.get(i).toString().contains(vendorСodeInput)){
-                    perfumesLux.remove(i);
-                }  else {
-                    System.out.println("No cosmetics found");
+            } else if (price > 1000&&!perfumesLux.isEmpty()){
+                System.out.println("Enter vendor code of perfume: ");
+                Scanner inputNext = new Scanner(System.in);
+                String vendorСodeInput = inputNext.nextLine();
+                for (int i = 0; i < perfumesLux.size(); i++) {
+                    if (perfumesLux.get(i).toString().contains(vendorСodeInput)) {
+                        perfumesLux.remove(i);
+                        System.out.println("Delete successful");
+                    } else if (!perfumesLux.get(i).toString().contains(vendorСodeInput)) {
+                        System.out.println("No perfumes found for delete");
+                    }
                 }
-            }
+            } else System.out.println("No perfume on warehouse.");
 
         }
-        System.out.println("Successful" );
-
     }
 
     @Override
     public void viewProduct() {
-        System.out.println("Perfume of mass market : "+  perfumesMass.toString());
-        System.out.println("Perfume of lux : "+ perfumesLux.toString());
+        System.out.println("Perfume of mass market : " + perfumesMass.toString());
+        System.out.println("Perfume of lux : " + perfumesLux.toString());
     }
 }

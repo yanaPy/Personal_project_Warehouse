@@ -40,24 +40,29 @@ public class Сosmetics extends Product implements ReadWriteWarehouse {
 
     @Override
     public void deleteProduct() {
-        Scanner input = new Scanner(System.in);
+        if (сosmetics.isEmpty()) {
+            System.out.println("No сosmetics on warehouse.");
+        } else {
+            Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter vendor code of perfume: ");
-        String vendorСodeInput = input.nextLine();
+            System.out.println("Enter vendor code of perfume: ");
+            String vendorСodeInput = input.nextLine();
 
-        for (int i = 0; i < сosmetics.size(); i++) {
-            if (сosmetics.get(i).toString().contains(vendorСodeInput)){
-                сosmetics.remove(i);
-            } else {
-                    System.out.println("No cosmetics found");
+            for (int i = 0; i < сosmetics.size(); i++) {
+                if (сosmetics.get(i).toString().contains(vendorСodeInput)) {
+                    сosmetics.remove(i);
+                    System.out.println("Delete successful");
+                } else {
+                    System.out.println("No cosmetics found for delete");
                 }
             }
         }
+    }
 
 
     @Override
     public void viewProduct() {
-        System.out.println("Сosmetics on warehouse :"+ сosmetics.toString());
+        System.out.println("Сosmetics on warehouse :" + сosmetics.toString());
 
     }
 
