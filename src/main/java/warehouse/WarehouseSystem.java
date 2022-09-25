@@ -1,9 +1,9 @@
-package Warehouse;
+package warehouse;
 
-import UserAccount.CreateAccount;
-import UserAccount.Account;
-import Products.Perfume;
-import Products.Сosmetics;
+import product.Perfume;
+import product.Сosmetics;
+import account.Account;
+import account.CreateAccount;
 
 import java.util.Scanner;
 
@@ -20,7 +20,7 @@ public class WarehouseSystem {
             System.out.println("Choose option:");
             System.out.println("1 - Create account");
             System.out.println("2 - Login account");
-            System.out.println("3 - Work with warehouse");
+            System.out.println("3 - Work with main.java.app.warehouse");
             System.out.println("4 - Quit");
 
             Scanner input = new Scanner(System.in);
@@ -61,7 +61,8 @@ public class WarehouseSystem {
                             System.out.println("Invalid choice");
                         }
                     }
-                } else System.out.println("Operations from the warehouse are available only to authorized users");
+                } else
+                    System.out.println("Operations from the main.java.app.warehouse are available only to authorized users");
             } else if (choice == 4) {
                 break;
             } else {

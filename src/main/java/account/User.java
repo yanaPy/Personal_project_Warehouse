@@ -1,4 +1,4 @@
-package UserAccount;
+package account;
 
 public class User {
 

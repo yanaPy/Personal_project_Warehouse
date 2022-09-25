@@ -1,6 +1,6 @@
-package Products;
+package product;
 
-import Warehouse.ReadWriteWarehouse;
+import warehouse.ReadWriteWarehouse;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -41,13 +41,13 @@ public class Сosmetics extends Product implements ReadWriteWarehouse {
 
             Сosmetics cosmetic = new Сosmetics(name, vendorСode, price);
             сosmetics.add(cosmetic);
-        } else System.out.println("There is no space in the сosmetics warehouse");
+        } else System.out.println("There is no space in the сosmetics main.java.app.warehouse");
     }
 
     @Override
     public void deleteProduct() {
         if (сosmetics.isEmpty()) {
-            System.out.println("No сosmetics on warehouse.");
+            System.out.println("No сosmetics on main.java.app.warehouse.");
         } else {
             Scanner input = new Scanner(System.in);
 
@@ -68,7 +68,7 @@ public class Сosmetics extends Product implements ReadWriteWarehouse {
 
     @Override
     public void viewProduct() {
-        System.out.println("Product.Сosmetics on warehouse :" + сosmetics.toString());
+        System.out.println("Product.Сosmetics on main.java.app.warehouse :" + сosmetics.toString());
 
     }
 

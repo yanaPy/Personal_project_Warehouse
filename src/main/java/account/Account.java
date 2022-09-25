@@ -1,4 +1,4 @@
-package UserAccount;
+package account;
 
 import java.util.ArrayList;
 import java.util.Scanner;
