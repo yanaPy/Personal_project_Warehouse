@@ -20,7 +20,7 @@ public class WarehouseSystem {
             System.out.println("Choose option:");
             System.out.println("1 - Create account");
             System.out.println("2 - Login account");
-            System.out.println("3 - Work with main.java.app.warehouse");
+            System.out.println("3 - Work with warehouse");
             System.out.println("4 - Quit");
 
             Scanner input = new Scanner(System.in);
@@ -62,7 +62,7 @@ public class WarehouseSystem {
                         }
                     }
                 } else
-                    System.out.println("Operations from the main.java.app.warehouse are available only to authorized users");
+                    System.out.println("Operations from the warehouse are available only to authorized users");
             } else if (choice == 4) {
                 break;
             } else {

@@ -64,14 +64,14 @@ public class Perfume extends Product implements ReadWriteWarehouse {
             Perfume perfume = new Perfume(name, vendorСode, price);
             perfumesLux.add(perfume);
 
-        } else System.out.println("There is no space in the perfume main.java.app.warehouse");
+        } else System.out.println("There is no space in the perfume on warehouse");
 
     }
 
     @Override
     public void deleteProduct() {
         if (perfumesMass.isEmpty() && perfumesLux.isEmpty()) {
-            System.out.println("No perfume on main.java.app.warehouse.");
+            System.out.println("No perfume on warehouse.");
         } else {
             System.out.println("Enter price of perfume: ");
             Scanner input = new Scanner(System.in);
@@ -103,7 +103,7 @@ public class Perfume extends Product implements ReadWriteWarehouse {
                         System.out.println("No perfumes found for delete");
                     }
                 }
-            } else System.out.println("No perfume on main.java.app.warehouse.");
+            } else System.out.println("No perfume on warehouse.");
 
         }
     }
