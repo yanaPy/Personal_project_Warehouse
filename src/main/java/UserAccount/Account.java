@@ -1,3 +1,5 @@
+package UserAccount;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -79,7 +81,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
+        return "Account.Account{" +
                 "user: " + user +
                 ", numberAcc: " + numberAcc +
                 '}';

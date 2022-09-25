@@ -1,3 +1,5 @@
+package UserAccount;
+
 import java.util.Scanner;
 
 public class CreateAccount {

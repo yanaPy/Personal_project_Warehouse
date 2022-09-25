@@ -1,3 +1,10 @@
+package Warehouse;
+
+import UserAccount.CreateAccount;
+import UserAccount.Account;
+import Products.Perfume;
+import Products.Сosmetics;
+
 import java.util.Scanner;
 
 public class WarehouseSystem {

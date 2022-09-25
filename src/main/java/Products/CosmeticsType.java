@@ -1,3 +1,5 @@
+package Products;
+
 public enum CosmeticsType {
 
     LUX(1);

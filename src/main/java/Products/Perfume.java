@@ -1,3 +1,7 @@
+package Products;
+
+import Warehouse.ReadWriteWarehouse;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -40,21 +44,23 @@ public class Perfume extends Product implements ReadWriteWarehouse {
 
 
         if (price <= 1000 && perfumesMass.size() <= PerfumeType.MASSMARKET.getAmount()) {
+            Scanner inputNext = new Scanner(System.in);
             System.out.println("Enter name of perfume: ");
-            String name = input.nextLine();
+            String name = inputNext.nextLine();
 
             System.out.println("Enter vendor code of perfume: ");
-            String vendorСode = input.nextLine();
+            String vendorСode = inputNext.nextLine();
 
             Perfume perfume = new Perfume(name, vendorСode, price);
             perfumesMass.add(perfume);
             System.out.println("Successful");
         } else if (price > 1000 && perfumesLux.size() <= PerfumeType.LUX.getAmount()) {
+            Scanner inputNext = new Scanner(System.in);
             System.out.println("Enter name of perfume: ");
-            String name = input.nextLine();
+            String name = inputNext.nextLine();
 
             System.out.println("Enter vendor code of perfume: ");
-            String vendorСode = input.nextLine();
+            String vendorСode = inputNext.nextLine();
             Perfume perfume = new Perfume(name, vendorСode, price);
             perfumesLux.add(perfume);
 
@@ -104,7 +110,7 @@ public class Perfume extends Product implements ReadWriteWarehouse {
 
     @Override
     public void viewProduct() {
-        System.out.println("Perfume of mass market : " + perfumesMass.toString());
-        System.out.println("Perfume of lux : " + perfumesLux.toString());
+        System.out.println("Perfume.Perfume of mass market : " + perfumesMass.toString());
+        System.out.println("Perfume.Perfume of lux : " + perfumesLux.toString());
     }
 }

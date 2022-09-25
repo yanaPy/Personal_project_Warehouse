@@ -1,3 +1,5 @@
+package Products;
+
 public class Product {
 
     private double price;
@@ -39,7 +41,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Product.Product{" +
                 "price=" + price +
                 ", vendorСode='" + vendorСode + '\'' +
                 ", name='" + name + '\'' +

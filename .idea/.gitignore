@@ -1,9 +1,9 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-/target
 /out
 /.iml
-/target
+/src/target
 /.pom.xml
 /src/test
+/.idea

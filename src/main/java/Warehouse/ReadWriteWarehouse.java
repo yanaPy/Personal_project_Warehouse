@@ -1,3 +1,5 @@
+package Warehouse;
+
 public interface ReadWriteWarehouse {
 
     void addProduct();

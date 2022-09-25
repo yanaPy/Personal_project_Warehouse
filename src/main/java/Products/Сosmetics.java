@@ -1,3 +1,7 @@
+package Products;
+
+import Warehouse.ReadWriteWarehouse;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -64,7 +68,7 @@ public class Сosmetics extends Product implements ReadWriteWarehouse {
 
     @Override
     public void viewProduct() {
-        System.out.println("Сosmetics on warehouse :" + сosmetics.toString());
+        System.out.println("Product.Сosmetics on warehouse :" + сosmetics.toString());
 
     }
 

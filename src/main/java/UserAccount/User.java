@@ -1,3 +1,5 @@
+package UserAccount;
+
 public class User {
 
     private final String name;
@@ -25,7 +27,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Account.Account.User{" +
                 "name: '" + name + '\'' +
                 ", surname: '" + surname + '\'' +
                 ", patronymic: '" + patronymic + '\'' +
