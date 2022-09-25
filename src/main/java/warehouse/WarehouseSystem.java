@@ -2,8 +2,8 @@ package warehouse;
 
 import product.Perfume;
 import product.Сosmetics;
-import account.Account;
-import account.CreateAccount;
+import userAccount.Account;
+import userAccount.CreateAccount;
 
 import java.util.Scanner;
 
